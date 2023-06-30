@@ -9,7 +9,7 @@ import { getToken } from "next-auth/jwt";
 const Login = () => {
   const router = useRouter();
 
-  useEffect(() => {
+ /*  useEffect(() => {
     (async () => {
       const session = await getSession();
       console.log(session);
@@ -18,15 +18,15 @@ const Login = () => {
       }
     })();
   }, []);
-
+ */
   const onFinish = async (values) => {
     //  console.log(values)
-    const data = await signIn("credentials", {
+   await signIn("credentials", {
       redirect: true,
       email: values.username,
       password: values.password,
+      
     });
-    console.log("data", data);
   };
 
   return (
@@ -96,7 +96,7 @@ const Login = () => {
 
 export default Login;
 
-export async function getServerSideProps(context) {
+/* export async function getServerSideProps(context) {
   const { query, req, res } = context;
   var error = "";
   if (Boolean(query.error)) {
@@ -112,3 +112,4 @@ export async function getServerSideProps(context) {
     return { props: { providers: await getProviders(), loginError: error } };
   }
 }
+ */

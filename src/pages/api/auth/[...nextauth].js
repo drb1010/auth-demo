@@ -28,7 +28,7 @@ export default NextAuth({
     colorScheme: "dark",
   },
   pages: {
-    signIn: "/login",
+    //signIn: "/",
     //    signOut: '/signout',
   },
   callbacks: {
@@ -36,7 +36,6 @@ export default NextAuth({
       console.log(credentials);
       return true;
     },
-
     async jwt({ token }) {
       token.userRole = "regusr";
       return token;

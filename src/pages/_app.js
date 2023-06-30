@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import DashboardLayout from "./component/layout";
 import { useEffect, useState } from "react";
 import Login from "./login";
+import { Spin } from "antd";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -15,10 +16,10 @@ export default function App({ Component, pageProps }) {
       const session = await getSession();
       if (session) {
         setIsLoggedIn(true);
-      } else if (session === null || session === false) {
-        <h1>Loading .....</h1>;
+      } else if (session === false) {
+        <Spin />;
       } else {
-        router.push("/login");
+       // router.push("/login");
       }
     })();
   }, [isLoggedIn]);

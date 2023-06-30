@@ -31,7 +31,10 @@ const profileItems = [
   },
 ];
 
-const items = [getItem("Dashboard", "/", <DashboardOutlined />)];
+const items = [
+  getItem("Dashboard", "/", <DashboardOutlined />),
+  getItem("Blog", "/create", <DashboardOutlined />)
+];
 
 const DashboardLayout = ({ children }) => {
   const router = useRouter();
@@ -47,7 +50,7 @@ const DashboardLayout = ({ children }) => {
     router.push(e.key);
   };
 
-  useEffect(() => {
+ /*  useEffect(() => {
     (async () => {
       const session = await getSession();
       console.log(session);
@@ -55,12 +58,12 @@ const DashboardLayout = ({ children }) => {
         router.push("/");
       }
     })();
-  }, []);
+  }, []); */
 
   const onClickDropdown = async ({ key }) => {
     if (key == 3) {
       await signOut();
-      router.push("/login");
+    //  router.push("/login");
     }
   };
   return (
@@ -82,7 +85,7 @@ const DashboardLayout = ({ children }) => {
           breakpoint="lg"
           collapsedWidth="50px"
           onBreakpoint={(broken) => {
-            console.log(broken);
+           
           }}
           collapsible
           collapsed={collapsed}
