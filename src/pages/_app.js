@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
        // router.push("/login");
       }
     })();
-  }, [isLoggedIn]);
+  }, []);
   return (
     <SessionProvider session={pageProps.session} refetchInterval={0}>
       {isLoggedIn ? (

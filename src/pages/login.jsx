@@ -96,7 +96,7 @@ const Login = () => {
 
 export default Login;
 
-/* export async function getServerSideProps(context) {
+export async function getServerSideProps(context) {
   const { query, req, res } = context;
   var error = "";
   if (Boolean(query.error)) {
@@ -112,4 +112,3 @@ export default Login;
     return { props: { providers: await getProviders(), loginError: error } };
   }
 }
- */

@@ -33,7 +33,7 @@ const profileItems = [
 
 const items = [
   getItem("Dashboard", "/", <DashboardOutlined />),
-  getItem("Blog", "/create", <DashboardOutlined />)
+  getItem("Blog", "/demo", <DashboardOutlined />)
 ];
 
 const DashboardLayout = ({ children }) => {
